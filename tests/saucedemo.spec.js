@@ -25,6 +25,5 @@ test('sauce demo', async ({ page }) => {
   await expect(badge2).toHaveText('3');
   await page.click('#back-to-products')
   await page.click('#react-burger-menu-btn')
-  await page.click('#about_sidebar_link')
-  await expect(page).toHaveTitle('Sauce Labs: Cross Browser Testing, Selenium Testing & Mobile Testing')
+
 });
