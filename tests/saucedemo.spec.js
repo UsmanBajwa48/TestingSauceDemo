@@ -25,5 +25,7 @@ test('sauce demo', async ({ page }) => {
   await expect(badge2).toHaveText('3');
   await page.click('#back-to-products')
   await page.click('#react-burger-menu-btn')
+  await page.click('.product_sort_container')
+  await page.locator(".product_sort_container").selectOption({label: 'Name (Z to A)'})
 
 });
