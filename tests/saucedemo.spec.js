@@ -28,5 +28,5 @@ test('sauce demo', async ({ page }) => {
   await page.click('.product_sort_container')
   await page.locator(".product_sort_container").selectOption({label: 'Name (Z to A)'})
   const pirces = await page.$$('.inventory_item_price');
-  console.log("Nuber of cards prices are following ", await pirces.length)
+  console.log("Nuber of cards prices are following ", await pirces.length ) 
 });
