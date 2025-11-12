@@ -28,5 +28,15 @@ test('sauce demo', async ({ page }) => {
   await page.click('.product_sort_container')
   await page.locator(".product_sort_container").selectOption({label: 'Name (Z to A)'})
   const pirces = await page.$$('.inventory_item_price');
-  console.log("Nuber of cards prices are following ", await pirces.length ) 
+  console.log("Nuber of cards prices are following ", await pirces.length )
+  await page.click('.shopping_cart_badge')
+  await page.click('#checkout')
+  await page.locator('#first-name').fill('A')
+  await page.locator('#last-name').fill('B')
+  await page.locator('#postal-code').fill('53700')
+  await page.click('#continue')
+  const checkoutOverview = page.locator('.title');
+  await expect(checkoutOverview).toBeVisible();
+  await page.click('#finish')
+
 });
